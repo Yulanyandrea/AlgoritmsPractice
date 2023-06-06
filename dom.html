@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM</title>
+  </head>
+  <body>
+    <p class="parrafo">Hola DOM</p>
+    <p class="parrafo">como estas</p>
+    <div id="myDiv">
+      <p>Hello, world!</p>
+    </div>
+
+    <ul id="lista-dinamica"></ul>
+
+    <div class="container py-5 text-center bg-warning">
+      <button class="btn btn-info">Aumentar</button>
+      <button class="btn btn-danger">Disminuir</button>
+      <h4 class="mt-5">Contador: <span id="resultado">0</span></h4>
+    </div>
+  </body>
+  <script>
+    console.log(document.querySelector(".parrafo"));
+    document.querySelector(".parrafo").textContent = "Párrafo dinámico";
+    const getElemnt = document.getElementById("myDiv");
+    myDiv.innerHTML = "<b>Texto destacado</b> dentro de párrafo";
+
+    const lista = document.getElementById("lista-dinamica");
+    const array = ["Yula", "Luna", "Jonas", "Denver"];
+    const fragment = document.createDocumentFragment();
+    array.forEach((item) => {
+      const createLi = document.createElement("li");
+      createLi.textContent = item;
+      fragment.appendChild(createLi);
+    });
+    lista.appendChild(fragment);
+
+    const resultado = document.getElementById("resultado");
+    const buttonAdd = document.querySelector(".btn-info");
+    let contador = 0;
+
+    buttonAdd.addEventListener("click", () => {
+      contador++;
+      pintarContador();
+    });
+    pintarContador = () => {
+      resultado.textContent = contador;
+    };
+
+    const buttonLess = document.querySelector(".btn-danger");
+    buttonLess.addEventListener("click", () => {
+      contador--;
+      pintarContador();
+    });
+
+    pintarContador = () => {
+      resultado.textContent = contador;
+    };
+  </script>
+</html>
