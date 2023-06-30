@@ -1,7 +1,7 @@
 let  kidsWithCandies = function(candies, extraCandies) {
   let array = []
   const maxNum = Math.max(...candies)
-  candies.map((candy)=>{
+  candies.map((candy)=>{ 
     const results = candy + extraCandies
     if(results >= maxNum){
       let result =true
