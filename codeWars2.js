@@ -54,3 +54,16 @@ const rps = (p1, p2) => {
 console.log(rps("scissors","paper"))
 console.log(rps("scissors","rock"))
 console.log(rps("rock","rock"))
+
+//You are given the length and width of a 4-sided polygon.
+// The polygon can either be a rectangle or a square.
+// If it is a square, return its area. If it is a rectangle, return its perimeter.
+//Note: for the purposes of this kata you will assume that it is a square if its length and width are equal, otherwise it is a rectangle.
+
+const areaOrPerimeter = function(l , w) {
+ return l ===w ? l*w : (2*l+2*w)
+};
+
+console.log(areaOrPerimeter(3,  3))
+console.log(areaOrPerimeter(6,  10))
+
