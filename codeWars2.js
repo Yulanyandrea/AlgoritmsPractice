@@ -67,3 +67,60 @@ const areaOrPerimeter = function(l , w) {
 console.log(areaOrPerimeter(3,  3))
 console.log(areaOrPerimeter(6,  10))
 
+// We need a function that can transform a number (integer) into a string.
+//What ways of achieving this do you know?
+
+function numberToString(num) {
+  return num.toString()
+
+}
+
+console.log(numberToString(123))
+
+//An isogram is a word that has no repeating letters,
+//consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram.
+//Assume the empty string is an isogram. Ignore letter case.
+function isIsogram(str){
+  let letter =str.toLowerCase()
+  let letters={}
+  for(let i =0; i<letter.length;i++){
+    if(letters[letter[i]]){
+      return false
+
+    }
+    letters[letter[i]] = true;
+  }
+  return true
+}
+
+console.log(isIsogram("Dermatoglyphics"))
+console.log(isIsogram( "moose"))
+
+//Write a function named setAlarm/set_alarm/set-alarm/setalarm (depending on language) which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter,
+//vacation is true whenever you are on vacation.
+//The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
+//employed | vacation
+// true     | true     => false
+// true     | false    => true
+// false    | true     => false
+// false    | false    => false
+function setAlarm(employed, vacation){
+  return employed== true && vacation==false ? true : false
+
+}
+
+console.log(setAlarm(false,false))
+
+//Given an array of integers as strings and numbers,
+//return the sum of the array values as if all were numbers.
+//Return your answer as a number.
+function sumMix(x){
+  let suma =0
+  for(let i=0; i<x.length;i++){
+    suma += parseInt(x[i])
+
+  }
+  return suma
+
+}
+console.log(sumMix([9, 3, '7', '3']))
