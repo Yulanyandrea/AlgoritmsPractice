@@ -29,3 +29,28 @@ function past(h, m, s){
 }
 
 console.log(past(0,1,1))
+
+//The main idea is to count all the occurring characters in a string. If you have a string like aba,
+//then the result should be {'a': 2, 'b': 1}.
+//What if the string is empty? Then the result should be empty object literal, {}.
+
+function count(string) {
+  const conteoCaracteres = {};
+
+  for (const caracter of string) {
+    conteoCaracteres[caracter] = (conteoCaracteres[caracter] || 0) + 1;
+  }
+
+  return conteoCaracteres;
+}
+
+console.log(count("abc"))
+
+//OTRA FORMA
+function count (string) {
+  var count = {};
+  string.split('').forEach(function(s) {
+     count[s] ? count[s]++ : count[s] = 1;
+  });
+  return count;
+}
