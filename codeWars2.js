@@ -124,3 +124,38 @@ function sumMix(x){
 
 }
 console.log(sumMix([9, 3, '7', '3']))
+
+////Recibes dos parámetros: una lista de palabras words y una palabra word. 
+//Primero, busca el índice de la palabra en la lista. Después, usa ese índice (que será un número) y 
+//devuelve todas las palabras de words que sean más largas (length) que el número del índice.
+//Ten en cuenta que la palabra word siempre existirá en el array, por lo que no es necesario comprobar si existe o no.
+function buscaPalabras(words, word) {
+  let finds = words.indexOf(word)
+  let palabras = words.filter(palabra =>palabra.length>finds)
+  return palabras
+}
+
+console.log(buscaPalabras(['play', 'balon', 'asa', 'taza', 'tio'], 'tio'))
+
+
+//Recibimos una matriz de cadenas de texto. 
+//Tenemos que localizar la posición de la palabra "JavaScript" en la matriz y devolver su posición como un array de dos elementos: el índice de la fila y 
+//el índice de la columna.
+function findJavaScript(matrix) {
+  let answer =[]
+  // tu código aquí
+  for(let i=0; i<matrix.length;i++){
+    for(let j=0;matrix[i].length;j++){
+      if(matrix[i][j]=== "JavaScript" ){
+        return answer.push([i,j])
+      }
+    }
+  }
+  return  answer.push(-1,-1)
+}
+const matrix = [
+  ['HTML', 'CSS', 'JavaScript'],
+  ['Java', 'C++', 'Python'],
+  ['Ruby', 'Go', 'Swift']
+]
+console.log(findJavaScript(matrix))
