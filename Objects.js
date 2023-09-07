@@ -6,8 +6,9 @@
 // Un método getStatus que devuelva el texto El canal de <name> tiene <subs> suscriptores. Por ejemplo, para name = 'Dani' y subs = 100, el método getStatus devolvería El canal de Dani tiene 100 suscriptores.
 // ¡Ojo! El método getStatus debe devolver el texto, NO imprimirlo por consola.
 
+
 function createObject(name, subs) {
-  
+
 let object = {
   name: name,
   subscribers: subs,
@@ -15,7 +16,7 @@ let object = {
   getStatus:function (){
     return `El canal de ${name} tiene ${subs} suscriptores`
   }
-  
+
 }
   return object
 }
@@ -32,7 +33,7 @@ function getKeysOfBooleanValues(obj) {
         array.push(val)
       }
     }
-      
+
   return array
     }
 
